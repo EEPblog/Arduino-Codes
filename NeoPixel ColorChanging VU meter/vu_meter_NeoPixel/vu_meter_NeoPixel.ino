@@ -16,9 +16,9 @@ void setup() {
 
 void loop() {
   int analog = analogRead(A0);  //connect the Audio Source here, for best results use an OP amp front end.
-  int scale = analogRead(A1);   //this ultimately sets the sensitivity, basically the high point for the VUmeter
-  int threshold = analogRead(A2); //if the signal crosses this point, the VUmeter will change color
-  int hysterisis = analogRead(A3); //the hysterisis is necessary, since it determins the reset value before another color change
+  int scale = 700;   //this ultimately sets the sensitivity, basically the high point for the VUmeter
+  int threshold = 600; //if the signal crosses this point, the VUmeter will change color
+  int hysterisis = 500; //the hysterisis is necessary, since it determins the reset value before another color change
    
   val = map(analog, 0, scale, 1, NUMPIXELS); //this scales the Audio source to the amount of pixels in our strip
 
